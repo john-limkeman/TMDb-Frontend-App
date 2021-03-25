@@ -25,13 +25,36 @@ export default {
           text: "",
           page: 1,
           type: "movie",
+        },
+        api: {
+          base: "",
+          key: "",
+          params: "&language=en-US&include_adult=false&query="
         }
     }
   },
   methods: {
     conductSearch(){
       console.log(this.query)
+      if(this.query.type == "movie"){
+        this.searchMovies();
+      } else if (this.query.type == "tv"){
+        this.searchTV();
+      } else{
+        this.searchPeople();
+      }
+    },
+    searchMovies(){
+      console.log("movie search...")
+
+    },
+    searchTV(){
+      console.log("tv search...")
+    },
+    searchPeople(){
+      console.log("people search...")
     }
+
   },
   components: {
 
